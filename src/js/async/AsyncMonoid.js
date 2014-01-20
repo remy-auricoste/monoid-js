@@ -28,7 +28,15 @@ define([
 	}
    });
 
-   classe.prototype = new Monoid(combine, zero);
+   var chain = function(async, async2) {
+        return new AsyncCall(function(params, callback) {
+                async.run(params, function(result) {
+                        async2.run(result, callback);
+                });
+        });
+   }
+
+   classe.prototype = new Monoid(combine, zero, chain);
 
    return classe;
 });
