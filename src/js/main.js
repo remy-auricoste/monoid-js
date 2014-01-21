@@ -1,0 +1,4 @@
+define([
+    "async/AsyncMonoid"
+], function() {
+});
