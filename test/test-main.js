@@ -5,6 +5,7 @@ for (var file in window.__karma__.files) {
     }
 }
 console.log("loading test-main.js");
+console.log(tests);
 requirejs.config({
     // Karma serves files from '/base'
     baseUrl: '/base/src/js',
